@@ -46,11 +46,6 @@ struct commandStruct{
 	char const *help;
 };
 
-int add (int, int);
-int subtract (int, int);
-int do_math (int (*math_fn_ptr) (int, int), int, int);
-int main();
-
 
 void CmdVersion(void)
 {
@@ -69,9 +64,9 @@ void CmdTest2(void)
 
 
 const struct commandStruct commands[] ={
-	{"add",&CmdVersion,"Print version number"},
-	{"sub",&CmdTest1,"Runs test1"},
-	{"do_math",&CmdTest2,"Runs test2"},
+	{"ver",&CmdVersion,"Print version number"},
+	{"t1",&CmdTest1,"Runs test1"},
+	{"t2",&CmdTest2,"Runs test2"},
 	{"",0,""}
 };
 
