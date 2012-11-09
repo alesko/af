@@ -15,14 +15,14 @@ void main()
 
    gcounter = 0;
    pthread_t thread[NTHREADS];
-   //char* msg0 = "Messange from thread 0";
+   char* msg = "Messange from thread";
    //char* msg1 = "Messange from thread 1";
 
    int ret[NTHREADS];
    int i,j;
    for(i=0; i<NTHREADS; i++)
    {
-	   ret[i] = pthread_create(&thread[i], NULL, print_msg_func, NULL);
+	   ret[i] = pthread_create(&thread[i], NULL, print_msg_func, msg);
    }
    //ret1 = pthread_create(&thread1, NULL, print_msg_func, (void*) msg1);
 
@@ -34,7 +34,7 @@ void main()
    //pthread_join(thread1, NULL);
    for(j=0; j<NTHREADS; j++)
    {
-	   printf("Thread one returns: %d\n", ret[j]);
+	   printf("Thread %ld returns: %d\n",thread[j], ret[j]);
    }
    exit(0);
 
