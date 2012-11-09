@@ -20,4 +20,4 @@ test_pthread: $(PTHREAD_SRC) $(HDRS)
 	$(CC) -o testpthread testpthread.c $(CFLAGS)
 
 clean:
-	rm -f *.o testpthread 
+	rm -f *.o testpthread
