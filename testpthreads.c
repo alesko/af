@@ -33,6 +33,8 @@ void* print_msg_func(void *ptr)
 {
    char* msg;
    msg = (char*) ptr;
+   
+   printf("Thread number %ld\n", pthread_self());
    pthread_mutex_lock( &gmutex1 );
    gcounter++;
    printf("%s: counter is: %d\n",msg,gcounter);
