@@ -4,9 +4,14 @@
 
 void* print_msg_func(void *ptr);
 
+pthread_mutex_t gmutex1 = PTHREAD_MUTEX_INITIALIZER;
+int gcounter;
+
+
 void main()
 {
 
+   gcounter = 0;
    pthread_t thread0, thread1;
    char* msg0 = "Messange from thread 0";
    char* msg1 = "Messange from thread 1";
@@ -28,5 +33,8 @@ void* print_msg_func(void *ptr)
 {
    char* msg;
    msg = (char*) ptr;
-   printf("%s \n",msg);
+   pthread_mutex_lock( &gmutex1 );
+   gcounter++;
+   printf("%s: counter is: %d\n",msg,gcounter);
+   pthread_mutex_unlock( &gmutex1 );
 }
