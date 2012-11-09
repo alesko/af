@@ -2,6 +2,8 @@
 #include <stdlib.h>
 #include <pthread.h>
 
+#define NTHREADS 10
+
 void* print_msg_func(void *ptr);
 
 pthread_mutex_t gmutex1 = PTHREAD_MUTEX_INITIALIZER;
@@ -12,19 +14,28 @@ void main()
 {
 
    gcounter = 0;
-   pthread_t thread0, thread1;
-   char* msg0 = "Messange from thread 0";
-   char* msg1 = "Messange from thread 1";
+   pthread_t thread[NTHREADS];
+   //char* msg0 = "Messange from thread 0";
+   //char* msg1 = "Messange from thread 1";
 
-   int ret0, ret1;
+   int ret[NTHREADS];
+   int i,j;
+   for(i=0; i<NTHREADS; i++)
+   {
+	   ret[i] = pthread_create(&thread[i], NULL, print_msg_func, NULL);
+   }
+   //ret1 = pthread_create(&thread1, NULL, print_msg_func, (void*) msg1);
 
-   ret0 = pthread_create(&thread0, NULL, print_msg_func, (void*) msg0);
-   ret1 = pthread_create(&thread1, NULL, print_msg_func, (void*) msg1);
-
-   pthread_join(thread0, NULL);
-   pthread_join(thread1, NULL);
-   printf("Thread one returns: %d\n", ret0);
-   printf("Thread one returns: %d\n", ret1);
+   for(j=0; j<NTHREADS; j++)
+   {
+	   pthread_join(thread[j], NULL);
+   }
+   
+   //pthread_join(thread1, NULL);
+   for(j=0; j<NTHREADS; j++)
+   {
+	   printf("Thread one returns: %d\n", ret[j]);
+   }
    exit(0);
 
 }
