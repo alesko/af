@@ -21,16 +21,6 @@ char *G_gpio_mem, *G_gpio_map;
 char *G_spi0_mem, *G_spi0_map;
 
 // I/O access
-/*volatile unsigned * G_gpio;
-
-#define INP_GPIO(g) *(G_gpio+((g)/10)) &= ~(7<<(((g)%10)*3))
-#define OUT_GPIO(g) *(G_gpio+((g)/10)) |= ~(1<<(((g)%10)*3))
-#define SET_GPIO_ALT(g,a) *(G_gpio+(((g)/10))) |= (((a)<=3?)a)+4:(a)==4?3:2)<<(((g)%10)*3))
-
-#define GPIO_SET *(G_gpio+7)
-#define GPIO_CLR *(G_gpio+10)*/
-
-// I/O access
 volatile unsigned *G_gpio;
 
 // GPIO setup macros. Always use INP_GPIO(x) before using OUT_GPIO(x) or SET_GPIO_ALT(x,y)
@@ -49,7 +39,7 @@ int main(int* arc, char **argv)
    int g, rep;
 
    setup_io();
-
+      
    // Set GPIO pins 7 - 11 to output
    for( g = 7; g <= 11; g++)
    {
