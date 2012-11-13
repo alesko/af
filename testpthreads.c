@@ -10,7 +10,7 @@ pthread_mutex_t gmutex1 = PTHREAD_MUTEX_INITIALIZER;
 int gcounter;
 
 
-void main()
+int c_main()
 {
 
    gcounter = 0;
@@ -36,7 +36,8 @@ void main()
    {
 	   printf("Thread %ld returns: %d\n",thread[j], ret[j]);
    }
-   exit(0);
+   //exit(0);
+   return 1;
 
 }
 

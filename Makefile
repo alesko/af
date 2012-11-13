@@ -16,6 +16,9 @@ CC = gcc
 
 all: test_pthread
 
+rpi_iotest:
+
+
 test_pthread: $(PTHREAD_SRC) $(HDRS) 
 	$(CC) -o testpthread $(PTHREAD_SRC) $(CFLAGS)
 
