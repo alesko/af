@@ -10,7 +10,7 @@ pthread_mutex_t gmutex1 = PTHREAD_MUTEX_INITIALIZER;
 int gcounter;
 
 
-int c_main()
+int main()
 {
 
    gcounter = 0;
