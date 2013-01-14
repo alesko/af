@@ -3,7 +3,6 @@
 <body>
 
 <?php
-dl("/path/to/modulename.so");
 
 echo "PHP script with buttons";
 ?>
