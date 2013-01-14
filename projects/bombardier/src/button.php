@@ -2,8 +2,8 @@
 <html>
 <body>
 
-<?php
 
+<?php include 'example.php';
 echo "PHP script with buttons";
 ?>
 
