@@ -47,26 +47,26 @@ struct commandStruct{
 };
 
 
-void CmdVersion(void)
+void cmdver(void)
 {
 	printf("ver from func:\n");
 };
 
-void CmdTest1(void)
+void cmdtest1(void)
 {
 	printf("ver from test1:\n");
 };
 
-void CmdTest2(void)
+void cmdtest2(void)
 {
 	printf("ver from test2:\n");
 };
 
 
 const struct commandStruct commands[] ={
-	{"ver",&CmdVersion,"Print version number"},
-	{"t1",&CmdTest1,"Runs test1"},
-	{"t2",&CmdTest2,"Runs test2"},
+	{"ver",&cmdver,"Print version number"},
+	{"t1",&cmdtest1,"Runs test1"},
+	{"t2",&cmdtest2,"Runs test2"},
 	{"",0,""}
 };
 
@@ -75,22 +75,17 @@ int main(int argc, char* argv[])
 	int i,j;
 	void (*func)(void);
 
-	for(i = 1; i < argc; i++)
-	{
+	for(i = 1; i < argc; i++){
 		j = 0;
-		while( strlen(commands[j].name) > 0 )
-		{
-			if( 0 == strcmp(commands[j].name, argv[i]) )
-      		{
-	      		printf("%s\n",commands[j].help);
-	      		func = (commands[j].execute);
-	      		func();
-      		}
+		while( strlen(commands[j].name) > 0 ){
+			if( 0 == strcmp(commands[j].name, argv[i]) ){
+			        printf("%s\n",commands[j].help);
+	      		        func = (commands[j].execute);
+	      		        func();
+			}
 			j++;
 		}
-    }
-	
-  	
+        }	
   	return(0);
 
 }
