@@ -7,7 +7,7 @@
 
 echo "TED2000 Menu";
 
-function writeName($fval)
+function myfunc($fval)
 {
 echo $fval . " Refsnes.<br>";
 }
