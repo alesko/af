@@ -3,7 +3,7 @@
 <body>
 
 
-<?php include 'example.php';
+<?php 
 echo "PHP script with buttons";
 ?>
 
