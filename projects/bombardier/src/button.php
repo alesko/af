@@ -4,6 +4,14 @@
 
 
 <?php 
+
+// you define this variable here so that it exists for the call to exec
+$output = null;
+
+// Windows users: 'dir c:\\' or something similar
+exec('ls', $output);
+echo "<pre>" . var_export($output, TRUE) . "</pre>\\n";
+
 echo "PHP script with buttons";
 ?>
 
