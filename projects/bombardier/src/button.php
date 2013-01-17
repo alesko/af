@@ -14,11 +14,11 @@ $output = null;
 exec('ls', $output);
 echo "<pre>" . var_export($output, TRUE) . "</pre>\\n";
 
-echo "<button type='button' onclick='alert('Hello world!')'>Logout</button><br>"
-echo "<button type='button' onclick='alert('Hello world!')'>Position ID</button><br>"
-echo "<button type='button' onclick='alert('Hello world!')'>Program</button><br>"
-echo "<button type='button' onclick='alert('Hello world!')'>Read</button><br>"
-echo "<button type='button' onclick='alert('Hello world!')'>Maintenance</button><br>"
+echo "<button type='button'>Logout</button><br>"
+//echo "<button type='button' onclick='alert('Hello world!')'>Position ID</button><br>"
+//echo "<button type='button' onclick='alert('Hello world!')'>Program</button><br>"
+//echo "<button type='button' onclick='alert('Hello world!')'>Read</button><br>"
+//echo "<button type='button' onclick='alert('Hello world!')'>Maintenance</button><br>"
 
 ?>
  
