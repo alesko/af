@@ -5,6 +5,8 @@
 
 <?php 
 
+echo "TED2000 Menu";
+
 // you define this variable here so that it exists for the call to exec
 $output = null;
 
@@ -12,14 +14,13 @@ $output = null;
 exec('ls', $output);
 echo "<pre>" . var_export($output, TRUE) . "</pre>\\n";
 
-echo "PHP script with buttons";
+echo "<button type='button' onclick='alert('Hello world!')'>Logout</button><br>"
+echo "<button type='button' onclick='alert('Hello world!')'>Position ID</button><br>"
+echo "<button type='button' onclick='alert('Hello world!')'>Program</button><br>"
+echo "<button type='button' onclick='alert('Hello world!')'>Read</button><br>"
+echo "<button type='button' onclick='alert('Hello world!')'>Maintenance</button><br>"
+
 ?>
-
-<button type="button" onclick="alert('Hello world!')">Click Me!</button><br>
-<button type="button" onclick="alert('Hello world!')">Click Me!</button><br>
-<button type="button" onclick="alert('Hello world!')">Click Me!</button><br>
-<button type="button" onclick="alert('Hello world!')">Click Me!</button><br>
-
  
 </body>
 </html>
