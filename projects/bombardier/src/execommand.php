@@ -12,6 +12,8 @@ $output = null;
 exec('func_pointer command', $output);
 echo "<pre>" . var_export($output, TRUE) . "</pre>";
 
-echo "<button type="button" onclick='menu.html'>Return</button><p>"
+echo "<button type='button' onclick='location.href=";
+echo '"menu.html"';
+echo "'>Return</button><p>";
 
 ?>
