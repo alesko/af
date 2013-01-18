@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<style>
+  .tabContainer{margin:10px 0;width:400px;}
+  .tabContainer .digiTabs{list-style:none;display:block;overflow:hidden;margin:0;padding:0px;position:relative;top:1px;}
+  .tabContainer .digiTabs li{float:left;background-color:#46AAF7;border:1px solid #e1e1e1;padding:5px!important;cursor:pointer;border-bottom:none;margin-right:10px;font-family:verdana;font-size:.8em;font-weight:bold;color:#fff;}
+  .tabContainer .digiTabs .selected{background-color:#fff;color:#393939;}#tabContent{padding:10px;background-color:#fff;overflow:hidden;float:left;margin-bottom:10px;border:1px solid #e1e1e1;width:93%;}
+</style>
+<script type="text/javascript">
+  function balisepos()
+  {
+  
+  }
+
+  function tabs(x)
+  {
+    var lis=document.getElementById("sidebarTabs").childNodes; //gets all the LI from the UL
+ 
+    for(i=0;i<lis.length;i++)
+    {
+      lis[i].className=""; //removes the classname from all the LI
+    }
+    x.className="selected"; //the clicked tab gets the classname selected
+    var res=document.getElementById("tabContent");  //the resource for the main tabContent
+    var tab=x.id;
+    switch(tab) //this switch case replaces the tabContent
+    {
+      case "tab1":
+        res.innerHTML=document.getElementById("tab1Content").innerHTML;
+        break; 
+      case "tab2":
+        res.innerHTML=document.getElementById("tab2Content").innerHTML;
+        break;
+      case "tab3":
+        res.innerHTML=document.getElementById("tab3Content").innerHTML;
+        break;
+     case "tab4":
+        res.innerHTML=document.getElementById("tab4Content").innerHTML;
+	break;
+    case "sub1":
+        res.innerHTML=document.getElementById("sub1Content").innerHTML;
+	break;
+      default:
+        res.innerHTML=document.getElementById("tab1Content").innerHTML;
+        break;
+ 
+    }
+  }
+ 
+</script>
+
+</head>
+
+<div class="tabContainer" >
+  <ul class="digiTabs" id="sidebarTabs">
+    <li id="tab1" onclick="tabs(this);">Position ID</li>
+    <li id="tab2" onclick="tabs(this);">Program</li>
+    <li id="tab3" onclick="tabs(this);">Read</li>
+    <li id="tab4" onclick="tabs(this);">Maintenence</li>
+  </ul>
+  <div id="tabContent">TED2000 Menu</div>
+</div>
+ 
+<div id="tab1Content" style="display:none;">
+  <button type="button" onClick="location.href='execommand.php?command=baliseposition'" >Balise Position</button><p>
+  <button type="button" onclick="location.href='execommand.php?command=boardposition'">Board Position</button><p>
+</div>
+<div id="tab2Content" style="display:none;">
+  <button type="button" onclick="location.href='execommand.php?command=progbalisetgm'">Balise Tgm</button><p>
+  <button type="button" onclick="location.href='execommand.php?command=progleudata'"  >LEU Data  </button><p>
+  <button type="button" onclick="location.href='execommand.php?command=progcpudata'"  >CPU Data  </button><p>
+</div>
+<div id="tab3Content" style="display:none;">
+  <button type="button" onclick="location.href='execommand.php?command=readbalisetgm'"     >Balise Tgm</button><p>
+  <button type="button" onclick="location.href='execommand.php?command=readleudata'"       >LEU Data</button><p>
+  <button type="button" onclick="location.href='execommand.php?command=readcpudata'"       >CPU Data</button><p>
+  <button type="button" id="sub1" onclick="tabs(this)";                                              >Compare</button><p>
+  <button type="button" onclick="location.href='execommand.php?command=readmultbalisetgm'" >Balise Tgm(xx)</button><p>
+</div>
+<div id="tab4Content" style="display:none;">
+  <button type="button" onclick="location.href='execommand.php?command=resetbalise'" >Reset Balise</button><p>
+  <button type="button" onclick="location.href='execommand.php?command=resetleudata'">Reset LEU data</button><p>
+  <button type="button" onclick="location.href='execommand.php?command=viewlogdata'" >View Log File</button><p>
+  <button type="button" onclick="location.href='execommand.php?command=delbgfile'"   >Delete BG File</button><p>
+  <button type="button" onclick="location.href='execommand.php?command=biterrcnt'"   >Bit Error Rate Counter</button><p>
+</div>
+<div id="sub1Content" style="display:none;">
+  <div id="tabContent">Compare Menu</div>
+  <button type="button" onclick="location.href='execommand.php?command=cmpbalise'" >Balise Tgm</button><p>
+  <button type="button" onclick="location.href='execommand.php?command=cmpleudata'">LEU Data</button><p>
+  <button type="button" id="tab3" onclick="tabs(this);"                            >Return</button><p>
+</div>
+
+</body>

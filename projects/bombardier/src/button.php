@@ -19,7 +19,7 @@ $output = null;
 exec('ls', $output);
 echo "<pre>" . var_export($output, TRUE) . "</pre>";
 
-echo "<button type='button' onclick='myfunc(0)'>Logout</button><br>"
+echo "<button type='button' onclick='parent.location'>Logout</button><br>"
 //echo "<button type='button' onclick='alert('Hello world!')'>Position ID</button><br>"
 //echo "<button type='button' onclick='alert('Hello world!')'>Program</button><br>"
 //echo "<button type='button' onclick='alert('Hello world!')'>Read</button><br>"
