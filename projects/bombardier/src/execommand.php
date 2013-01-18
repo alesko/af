@@ -12,4 +12,6 @@ $output = null;
 exec('func_pointer command', $output);
 echo "<pre>" . var_export($output, TRUE) . "</pre>";
 
+echo "<button type="button" onclick='menu.html'>Return</button><p>"
+
 ?>
