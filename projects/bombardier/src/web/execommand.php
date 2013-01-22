@@ -13,11 +13,20 @@ $output = null;
 
 // Windows users: 'dir c:\\' or something similar
 //exec('func_pointer command', $output);
+$output = array();
 exec('func_pointer command', $output );
-foreach($output as $line) {
+echo "<pre>";
+print_r($output,true);
+echo "</pre>";
+
+$response = array();
+exec('whoami', $response);
+print_r($response,true);
+
+//foreach($output as $line) {
 		// append each line, but make it HTML-friendly first
-		$formatted .= htmlspecialchars($line) . "\n";
-}
+//		$formatted .= htmlspecialchars($line) . "\n";
+//}
 
 //echo $output;
 //print_r($output);
