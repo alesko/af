@@ -1,6 +1,6 @@
 <?php include("header.html"); ?>
 	<div class="row-fluid">
-	    <div class="span12"><h1>Bombadier uber tool</h1></div>
+	    <div class="span12"><h1>PTE 2000 menu</h1></div>
 	    <table class="table">
               <thead>
                 <tr>
