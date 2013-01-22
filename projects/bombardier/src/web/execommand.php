@@ -11,8 +11,10 @@ echo $_GET['command'];
 $output = null;
 
 // Windows users: 'dir c:\\' or something similar
-exec('func_pointer command', $output);
-echo "<pre>"$output "</pre>";
+//exec('func_pointer command', $output);
+$output shell_exec('func_pointer command' );
+echo $output;
+//echo "<pre>" $output "</pre>";
 
 //echo "<button type='button' onclick='menu.html'>Return</button><p>"
 //=======
