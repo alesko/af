@@ -13,7 +13,6 @@ $output = null;
 // Windows users: 'dir c:\\' or something similar
 exec('func_pointer command', $output);
 echo "<pre>"$output "</pre>";
-echo "<pre>" . var_export($output, TRUE) . "</pre>";
 
 //echo "<button type='button' onclick='menu.html'>Return</button><p>"
 //=======
