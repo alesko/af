@@ -14,7 +14,7 @@ $output = null;
 // Windows users: 'dir c:\\' or something similar
 //exec('func_pointer command', $output);
 $output = array();
-exec('func_pointer command', $output );
+exec("func_pointer command", $output );
 echo "<pre>";
 print_r($output,true);
 echo "</pre>";
