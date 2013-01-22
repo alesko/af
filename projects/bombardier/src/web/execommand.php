@@ -1,6 +1,7 @@
 <?php include("header.html"); ?>
 
 <?php
+$formatted = "";
 
 //echo "Hello from execommand.php<p>";
 //echo "The command you whated to execute was:<p>";
@@ -12,9 +13,14 @@ $output = null;
 
 // Windows users: 'dir c:\\' or something similar
 //exec('func_pointer command', $output);
-$output = shell_exec('func_pointer command' );
+exec('func_pointer command', $output );
+foreach($output as $line) {
+		// append each line, but make it HTML-friendly first
+		$formatted .= htmlspecialchars($line) . "\n";
+}
+
 //echo $output;
-print_r($output);
+//print_r($output);
 //echo "<pre>" $output "</pre>";
 
 //echo "<button type='button' onclick='menu.html'>Return</button><p>"
