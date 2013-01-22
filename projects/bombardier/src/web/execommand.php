@@ -14,7 +14,8 @@ $output = null;
 //exec('func_pointer command', $output);
 $output = shell_exec('func_pointer command' );
 //echo $output;
-echo "<pre>" $output "</pre>";
+print_r($output);
+//echo "<pre>" $output "</pre>";
 
 //echo "<button type='button' onclick='menu.html'>Return</button><p>"
 //=======
